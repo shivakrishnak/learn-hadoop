@@ -1,1 +1,23 @@
 
+## Hive
+- warehouse the data
+- process the structured data
+- data in the form of tables
+
+[cloudera@quickstart ~]$ nano empdata.text
+[cloudera@quickstart ~]$ cat empdata.text 
+100	ramu	100000	hyd
+101	suri	78000	chn
+102	anil	95000	bng
+103	siva	135000	pune
+104	krsna	190000	ncr
+
+[cloudera@quickstart ~]$ hive
+
+Logging initialized using configuration in jar:file:/usr/lib/hive/lib/hive-common-1.1.0-cdh5.13.0.jar!/hive-log4j.properties
+WARNING: Hive CLI is deprecated and migration to Beeline is recommended.
+hive> create table emp_90(eid int, ename string, esal int, eloc string)
+    > row format delimited
+    > fields terminated by '\t'
+    > lines terminated by '\n'
+    > stored as textfile;
